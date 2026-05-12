@@ -1,0 +1,228 @@
+// app/page.tsx
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+export default function HomePage() {
+  return (
+    <main className="bg-[#F5F1EA] text-[#111111] overflow-hidden">
+      <Navbar />
+      {/* HERO SECTION */}
+      <section className="relative h-screen flex items-center justify-center">
+        <img
+          src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+          alt="coffee"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
+        <div className="absolute inset-0 bg-black/40" />
+
+        <div className="relative z-10 text-center text-white px-6">
+          <p className="tracking-[6px] uppercase text-sm mb-4">
+            Coffee • Art • Character
+          </p>
+
+          <h1 className="text-6xl md:text-8xl font-light mb-6">
+            Beardyman Whip
+          </h1>
+
+          <p className="max-w-xl mx-auto text-lg md:text-xl text-gray-200 mb-8">
+            A specialty coffee space mixed with art gallery vibes,
+            signature drinks, and creative energy in Bangkok.
+          </p>
+
+          <div className="flex gap-4 justify-center">
+            <Link 
+              href="/menu"
+              className="bg-white text-black px-6 py-3 rounded-full hover:scale-105 transition"
+              >
+              View Menu
+            </Link>
+
+            <Link
+              href="/gallery"
+              className="border border-white px-6 py-3 rounded-full hover:bg-white hover:text-black transition"
+              >
+              Visit Gallery
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PHILOSOPHY */}
+      <section className="py-28 px-6 md:px-20">
+        <div className="grid md:grid-cols-2 gap-14 items-center">
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
+            alt="coffee shop"
+            className="rounded-3xl w-full h-[500px] object-cover"
+          />
+
+          <div>
+            <p className="uppercase tracking-[4px] text-sm mb-4 text-gray-500">
+              Our Philosophy
+            </p>
+
+            <h2 className="text-5xl leading-tight mb-8">
+              Every cup tells a story.
+            </h2>
+
+            <p className="text-lg leading-8 text-gray-700">
+              Beardyman Whip is more than a coffee shop.
+              It’s a creative space where specialty coffee,
+              original artwork, and warm conversations come together.
+            </p>
+
+            <p className="text-lg leading-8 text-gray-700 mt-6">
+              Inspired by independent art culture and slow coffee moments,
+              we craft every drink fresh and every corner with personality.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SIGNATURE MENU */}
+      <section className="py-24 px-6 md:px-20 bg-white">
+        <div className="text-center mb-16">
+          <p className="uppercase tracking-[4px] text-sm text-gray-500 mb-4">
+            Signature Drinks
+          </p>
+
+          <h2 className="text-5xl">
+            Crafted with character
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          
+          {[
+            {
+              name: "Peach Coffee",
+              image:
+                "https://images.unsplash.com/photo-1517701604599-bb29b565090c",
+            },
+            {
+              name: "Cold Brew",
+              image:
+                "https://images.unsplash.com/photo-1517705008128-361805f42e86",
+            },
+            {
+              name: "Dirty Coffee",
+              image:
+                "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
+            },
+          ].map((item) => (
+            <div
+              key={item.name}
+              className="group cursor-pointer"
+            >
+              <div className="overflow-hidden rounded-3xl">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="h-[400px] w-full object-cover group-hover:scale-105 transition duration-500"
+                />
+              </div>
+
+              <div className="mt-5 flex justify-between items-center">
+                <h3 className="text-2xl">{item.name}</h3>
+
+                <span className="text-gray-500">
+                  Explore →
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* GALLERY */}
+      <section className="py-28 px-6 md:px-20">
+        <div className="text-center mb-16">
+          <p className="uppercase tracking-[4px] text-sm text-gray-500 mb-4">
+            Art Gallery
+          </p>
+
+          <h2 className="text-5xl">
+            Coffee meets creativity
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+            className="rounded-3xl h-[500px] w-full object-cover"
+          />
+
+          <img
+            src="https://images.unsplash.com/photo-1517048676732-d65bc937f952"
+            className="rounded-3xl h-[500px] w-full object-cover"
+          />
+        </div>
+      </section>
+
+      {/* ATMOSPHERE */}
+      <section className="relative h-[70vh] flex items-center justify-center">
+        <img
+          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
+        <div className="absolute inset-0 bg-black/50" />
+
+        <div className="relative z-10 text-center text-white px-6">
+          <h2 className="text-5xl md:text-7xl leading-tight">
+            Slow coffee.
+            <br />
+            Warm conversations.
+            <br />
+            Creative energy.
+          </h2>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-black text-white py-20 px-6 md:px-20">
+        <div className="grid md:grid-cols-3 gap-10">
+          
+          <div>
+            <h3 className="text-2xl mb-4">
+              Beardyman Whip
+            </h3>
+
+            <p className="text-gray-400 leading-7">
+              Specialty coffee and creative gallery space
+              in Bangkok.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="mb-4 text-lg">
+              Visit
+            </h4>
+
+            <p className="text-gray-400 leading-7">
+              อาคาร B คอนโดบดินทรสวีทโฮม
+              <br />
+              เขตวังทองหลาง กรุงเทพฯ
+            </p>
+          </div>
+
+          <div>
+            <h4 className="mb-4 text-lg">
+              Contact
+            </h4>
+
+            <p className="text-gray-400 leading-7">
+              096-750-0069
+              <br />
+              Instagram: @beardymanwhip
+            </p>
+          </div>
+        </div>
+
+        <div className="border-t border-white/10 mt-16 pt-6 text-gray-500 text-sm">
+          © 2026 Beardyman Whip
+        </div>
+      </footer>
+    </main>
+  );
+}
